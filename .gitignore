@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -128,6 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-=======
+
+# PyCharm files
 .idea/*
->>>>>>> 5f77bd8... Added bot skeleton
