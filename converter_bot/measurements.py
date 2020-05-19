@@ -12,7 +12,7 @@ class Measurements:
         self.densities = {'olive_oil': 920, 'water': 1000, 'milk': 1040,
                           'butter': 920, 'sugar': 720, 'flour': 1430}
         self.translations = {'ru': {
-            "tonne": "тонн",
+            "tonne": "тонна",
             "kilogram": "килограмм",
             "gram": "грамм",
             "cubic_metre": "кубический метр",
