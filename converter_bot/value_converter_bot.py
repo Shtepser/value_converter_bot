@@ -77,8 +77,8 @@ async def convert_values(message: types.Message):
     parsed_message = message_parser.parse(message.text)
     await types.ChatActions.typing(1)
     if not parsed_message:
-        await message.answer("Не удаётся распознать величины в сообщении! Обратитесь к \\info, "
-                             "\\measures и \\substances.")
+        await message.answer("Не удаётся распознать величины в сообщении! Обратитесь к /info, "
+                             "/measures и /substances.")
     else:
         quantity, base_measure, substance, target_measure = parsed_message
         target_quantity = converter.convert(substance, base_measure, target_measure, quantity)
