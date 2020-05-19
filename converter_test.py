@@ -1,12 +1,13 @@
 import unittest
 
 from converter import MassVolumeConverter
+from measurements import Measurements
 
 
 class MassVolumeConverterTest(unittest.TestCase):
 
     def setUp(self):
-        self.converter = MassVolumeConverter()
+        self.converter = MassVolumeConverter(Measurements())
 
     def test_masses(self):
         cases = [('kilogram', 'tonne', 32, 0.032), ('tonne', 'gram', 2.16, 2160000)]
