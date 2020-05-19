@@ -39,3 +39,14 @@ class Measurements:
         dictionary = self.translations[lang]
         return {dictionary[subst]: subst if subst in dictionary else (subst, subst)
                 for subst in self.densities}
+
+    def get_measurements_at_lang(self, lang):
+        measures = chain(self.masses, self.volumes)
+        dictionary = self.translations[lang]
+        return {measure: dictionary[measure] if measure in dictionary else (measure, measure)
+                for measure in measures}
+
+    def get_substances_at_lang(self, lang):
+        dictionary = self.translations[lang]
+        return {subst: dictionary[subst] if subst in dictionary else (subst, subst)
+                for subst in self.densities.keys()}
