@@ -29,7 +29,8 @@ class MessageParser:
         left, right = message.strip().split(" > ")
         quantity, *start_measure_and_substance = left.split(' ')
         quantity = self.__parse_quantity(quantity)
-        base_measure, substance = self.__parse_measure_and_substance(start_measure_and_substance)
+        measure_and_substance = self.__parse_measure_and_substance(start_measure_and_substance)
+        base_measure, substance = measure_and_substance if measure_and_substance else None, None
         target_measure = self.parse_measure(right)
         res = quantity, base_measure, substance, target_measure
         if any(elem is None for elem in res):
