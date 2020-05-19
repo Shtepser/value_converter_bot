@@ -20,14 +20,17 @@ dp = Dispatcher(bot)
 
 @dp.message_handler(commands=['start'])
 async def cmd_start(message: types.Message):
-    await types.ChatActions.typing()
-    content = "Hello world!"
-    await message.answer(content)
+    await types.ChatActions.typing(1)
+    await message.answer("Вас приветствует бот-конвертер")
+    await send_info(message)
 
 
 @dp.message_handler(commands=['info'])
 async def send_info(message: types.Message):
-    await message.answer("Информация о боте")
+    await types.ChatActions.typing(1)
+    with open("info_text.md", 'r') as info_file:
+        info_text = info_file.read()
+    await message.answer(info_text, parse_mode="MARKDOWN")
 
 
 if __name__ == '__main__':
